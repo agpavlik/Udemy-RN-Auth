@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = "AIzaSyDCYasArcOwcALFhIj2szug5aD2PgUQu1E";
+const API_KEY = "AIzaSyBVLEngfkS2iuweJ8pMAJh5xR4LOSYJpu0";
 
 // Send request to the Firebase to create a new user
 export async function createUser(email, password) {
