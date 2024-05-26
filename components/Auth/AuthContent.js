@@ -18,7 +18,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
 
   function switchAuthModeHandler() {
     if (isLogin) {
-      navigation.replace("Signup");
+      navigation.replace("Signup"); // without a backbutton
     } else {
       navigation.replace("Login");
     }
