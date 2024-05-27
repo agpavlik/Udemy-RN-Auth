@@ -2,6 +2,8 @@ import AuthContent from "../components/Auth/AuthContent";
 import { useContext, useState } from "react";
 import LoadingOverlay from "../components/ui/LoadingOverlay";
 import { createUser } from "../util/auth";
+import { AuthContext } from "../store/auth-context";
+import { Alert } from "react-native";
 
 function SignupScreen() {
   const [isAuthenticating, setIsAuthenticating] = useState(false); //spiner
