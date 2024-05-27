@@ -1,16 +1,19 @@
 import AuthContent from "../components/Auth/AuthContent";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import LoadingOverlay from "../components/ui/LoadingOverlay";
 import { createUser } from "../util/auth";
 
 function SignupScreen() {
   const [isAuthenticating, setIsAuthenticating] = useState(false); //spiner
 
-  // Function
+  const authCtx = useContext(AuthContext);
+
+  // Function sign up
   async function signupHandler({ email, password }) {
     setIsAuthenticating(true);
     try {
-      await createUser(email, password);
+      const token = await createUser(email, password);
+      authCtx.authenticate(token);
     } catch (error) {
       Alert.alert(
         "Authentication failed",
